@@ -1,0 +1,572 @@
+
+/*********************************
+GENERAL STYLING
+**********************************/
+
+body {
+  
+  font-family: "Crimson", serif;
+  font-weight: normal;
+
+
+
+}
+
+
+.eventsPage{
+  background-image: url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+
+
+
+}
+
+
+/*img {
+ max-width: 100%; 
+  
+}*/
+
+h3{
+  font-family: 'Crimson',serif;
+  
+  font-size: 2em;  
+  font-weight: bold;
+
+}
+
+
+address{
+
+  font-size: 18px;
+  margin-left: 18px;
+}
+
+
+.verse{
+  font-family: 'PT Serif', serif;
+  font-size: 1.25em;
+  font-style: italic;
+
+}
+
+label{
+  font-size: 1.50em;
+}
+
+p{
+  font-size: 1.50em;
+}
+
+
+
+/*********************************
+HEADING
+**********************************/
+
+.navbar {
+ /* float: left;*/
+  /*margin: 0 0 30px 0;*/
+  padding: 0 0 0 0;
+  width: 100%;
+  
+}
+
+
+
+/*#logo{
+  
+  width: 80%;
+ 
+}*/
+
+h1 {
+  
+  font-family: 'Dancing Script', cursive, serif;
+  font-weight: 700;
+  margin-top: 50px;
+  font-size: 65px;
+  font-weight: bold;
+  line-height: 1em;
+  text-align: center;
+  
+  
+}
+
+h2 {
+  font-family: 'PT Serif',serif;
+  font-size: 25px;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+
+
+
+/************************************
+NAVAGATION
+*************************************/
+.navbar-collapse {
+  text-align: center;
+  width: 100%;
+  /*padding: 10px 0;*/
+  /*margin-top: 30px; */ 
+}
+
+.navbar-collapse ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+
+  
+  
+}
+
+ul li {
+  display: inline-block;
+  margin-left: 0px;
+  text-align: center;
+  padding: 0 30px 0 30px;
+/* margin-left: 30%;*/
+
+  
+}
+
+ul a {
+  font-weight: 800;
+   font-size: 1.25em;
+   text-align: center;
+   margin-left: 25%;
+
+}
+
+
+ol li {
+
+   font-size: 18px;
+}
+
+/* Carousel
+================================ */
+
+.carousel{
+  background-image: url('../img/bg.jpg');
+  margin-bottom: 30px;
+}
+.carousel-indicators {
+  bottom: 0;
+
+
+}
+.carousel-indicators .active {
+
+  background-color: #222;
+}
+.carousel-indicators li {
+  border-color: #222;
+
+}
+
+/*.btn {
+
+  
+  float: center;
+  margin-left: 0px;
+  border-width: medium;
+  font-size: 20px;
+  font-style: bold;
+
+}*/
+
+
+#slides{
+
+  float: center;
+  width: 60%;
+  height: 40%;
+  margin-left: 20%;
+  margin-top: 0px;
+  margin-bottom: 40px;
+
+}
+
+.item h2{
+    
+     text-align: center;
+     margin-top: 20px;
+
+
+}
+
+/*==============================
+Jumbotron
+================================ */
+
+.jumbotron {
+  background-image: url('../img/bg.jpg');
+  background-repeat: repeat;
+
+  /*background-position:  200% 100%;*/
+  /*padding: 200px 0 140px 0;*/
+  /*margin-bottom: 70px;*/
+/*  max-height: 1000px;*/
+}
+
+/*==============================
+Photos 
+================================ */
+
+
+.helpPhoto, .donatePhoto, .aboutPhoto {
+ 
+  margin-top: 25px;
+  
+}
+
+/*.aboutPhoto{
+
+  width: 375px;
+}*/
+
+.pastor{
+  margin-top: 20px;
+  max-width: 45%;
+
+  
+  
+}
+
+.contactPhoto{
+   
+   margin-top: 45px;
+
+}
+
+.eventsPage{
+
+  min-height: 100px;
+}
+
+.event1Photo{
+  width: 30%;
+  margin-top: 30px;
+}
+
+.event2Photo{
+  width: 20%;
+  margin-top: 20px;
+
+}
+
+
+
+
+/************************************
+FOOTER
+*************************************/
+
+footer{
+    
+  border-top-style: solid;
+  border-top-width: 4px;
+  
+ /* color:#8b66b2;*/
+  /*background-color: #8b66b2;*/
+}
+
+
+/************************************
+COLORS
+*************************************/
+
+
+/* site body */
+body {
+  background-color: #fff;
+  color: #000;  
+}
+
+/* shades of purple and white */
+.navbar {
+  background: #fff; 
+  border-color: #7c50a7;
+  /*color: #000;*/
+}
+
+footer {
+  
+  border-top-color: #efce00;
+}
+
+.navbar-collapse {
+  background: #7c50a7;
+}
+
+/* logo text*/
+h1, h2 {
+  color:#000; 
+  }
+
+/* links*/
+a {
+  color: #7c50a7;
+}
+
+/* nav link */
+nav a, nav a:visited {
+  
+  color: #fff;
+}
+
+
+
+
+/* selected nav link  is a yellow color*/
+ul a.selected, ul a:hover, .btn-default:hover  {
+  
+  color: #efce00;
+}
+
+
+.btn-default {
+
+  color: black;
+  border-color: #efce00;
+  
+}
+
+
+/*************************************************************************************************/
+
+@media (max-width: 767px){
+
+	h1{
+
+		font-size: 40px;
+		text-align: center;
+		margin: 0px;
+		/*max-width: 350px;*/
+		
+	}
+
+  h2{
+      font-size: 20px;
+      text-align: center;
+      margin-top: 10px;
+  }
+
+
+ h3{
+
+     font-size: 1.40em;
+  }
+
+ul li{
+
+  display: inline-block;
+  padding: 0;
+}
+
+  ul a {
+
+    font-size: 0.80em;
+    padding:0;
+    margin: 0;
+  }
+
+  
+
+
+  h4{
+
+      font-size: 14px;
+    }
+  
+
+  .jumbotron p, p, ol li, label {
+
+      font-size: 1.15em;
+    }
+
+    address{
+
+       font-size: 14px;
+    }
+
+
+ 
+
+/*.aboutPhoto {
+ 
+    width: 225px;
+    margin-right: 50px;
+    
+}
+*/
+
+
+.pastor{
+ 
+   margin-bottom: 20px;
+  
+  
+}
+	#logo{
+		width: 20%;
+
+	}
+
+  textarea{
+
+    width: 300px;
+  }
+
+
+}
+
+/********************************************************/
+@media (min-width: 768px) and (max-width: 1000px ){
+
+h1{
+  font-size: 40px;
+  margin-top: 40px;
+}
+
+h2 {
+  margin-top: 35px;
+  font-size: 18px;
+}
+
+#logo{
+
+  margin-top: 30px;
+
+
+}
+
+h3{
+
+  font-size: 1.45em;
+}
+
+ul li{
+   padding: 0 5px 0 5px;
+}
+
+ul a {
+
+    font-size: 0.9em;
+
+    margin-left: 0%;
+  }
+
+  .jumbotron p, p,label {
+
+      font-size: 1.20em;
+    }
+
+    ol li{
+      font-size:1.2em; 
+    }
+
+    address{
+      font-size: 16px;
+    }
+
+    .pastor{
+
+      margin-left: 15%;
+      margin-bottom: 5%;
+    }
+
+ /*.contactPhoto, .donatePhoto, .helpPhoto{
+
+  width:275px;
+}*/
+
+
+/*.aboutPhoto{
+  width: 245px;
+}*/
+  
+
+  /*h4{
+
+      font-size:14px;
+
+    }*/
+
+  textarea{
+
+    width: 350px;
+  }
+}
+
+
+
+
+
+/*********************************************************/
+
+@media (min-width: 1001px) and (max-width: 1250px ){
+
+h1{
+  font-size: 55px;
+}
+
+h2 {
+  margin-top: 45px;
+  font-size: 20px;
+}
+
+h3{
+
+  font-size: 1.5em;
+}
+
+ul li{
+   padding: 0 20px 0 20px;
+}
+
+ul a {
+
+    font-size: 1em;
+
+    margin-left: 0%;
+  }
+
+  /*.jumbotron p, p,label {
+
+      font-size: 1.30em;
+    }*/
+
+    ol li{
+      font-size:1.25em; 
+    }
+
+    address{
+      font-size: 16px;
+    }
+
+    /*.aboutPhoto
+    {
+
+      width: 310px;
+    }*/
+    .pastor{
+      /*width: 45%;*/
+      margin-left: 25%;
+    }
+
+    .contactPhoto{
+
+      width: 300px;
+      }
+/*
+      h4{
+
+        font-size: 16px;
+      }*/
+
+}
