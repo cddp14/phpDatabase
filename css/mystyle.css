@@ -137,7 +137,7 @@ ul a {
   font-weight: 800;
    font-size: 1.25em;
    text-align: center;
-   margin-left: 25%;
+   margin-left: 10%;
 
 }
 
@@ -253,11 +253,11 @@ Photos
   margin-top: 30px;
 }
 
-.event2Photo{
+./*event2Photo{
   width: 20%;
   margin-top: 20px;
 
-}
+}*/
 
 
 
@@ -429,7 +429,7 @@ ul li{
 @media (min-width: 768px) and (max-width: 1000px ){
 
 h1{
-  font-size: 40px;
+  font-size: 43px;
   margin-top: 40px;
 }
 
@@ -440,7 +440,7 @@ h2 {
 
 #logo{
 
-  margin-top: 30px;
+  margin-top: 25px;
 
 
 }
