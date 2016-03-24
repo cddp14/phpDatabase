@@ -1,84 +1,41 @@
 <?php 
-$servername = "localhost";
-$username = "root";
-$password = "3566";
-$dbname = "practice";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    "<br>";
-}
-else{
-  echo "Connected to Database!!!!";
-
-}
-
-//prepare and bind
-$stmt = $conn->prepare("INSERT INTO patrons (firstname,lastname,email) VALUES (?,?,?)");
-$stmt->bind_param("sss",$firstname,$lastname,$email);
-
-
-//Check First Name
 if (isset($_REQUEST['submitted'])) {
-    // Initialize error array.
-    $errors = array();
+// Initialize error array.
+  $errors = array();
   // Check for a proper name
-  if (!empty($_REQUEST['firstname'])) {
-     $firstname = $_REQUEST['firstname'];
-      $pattern = "/^[a-zA-Z ]*$/";
-      // This is a regular expression that checks if the name is valid characters
-  if (preg_match($pattern,$firstname)){ 
-    $firstname = $_REQUEST['firstname'];
-  }
-  else{ 
-    $errors[] = 'Your Name can only contain A-Z or a-z .';
-  }
-  } 
-else {
-    $errors[] = 'You did not enter your first name.';
-  }
-  
-  //Check Last Name
-
-  if (!empty($_REQUEST['lastname'])) {
-  $lastname = $_REQUEST['lastname'];
+  if (!empty($_REQUEST['name'])) {
+  $name = $_REQUEST['name'];
   $pattern = "/^[a-zA-Z ]*$/";// This is a regular expression that checks if the name is valid characters
-  if (preg_match($pattern,$lastname)){ 
-    $lastname = $_REQUEST['lastname'];
-  }
-  else{ $errors[] = 'Your Name can only contain A-Z or a-z .';
-  }
-  } else {
-    $errors[] = 'You did not enter your last name.';
-  }
+  if (preg_match($pattern,$name)){ $name = $_REQUEST['name'];}
+  else{ $errors[] = 'Your Name can only contain A-Z or a-z .';}
+  } else {$errors[] = 'You did not enter your name.';}
+  
   
   
   //Check for a valid email address
   if (!empty($_REQUEST['email'])) {
   $email = $_REQUEST['email'];
+  /*$pattern = "/^[@a-zA-Z0-9\_]{2,20}/";*/
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)){ $email = $_REQUEST['email'];}
-  //else{ $errors[] = 'Your Phone number can only be numbers.';}
-  } else {$errors[] = 'You did not enter your email address.';
-}
+  /*else{ $errors[] = 'Your Phone number can only be numbers.';}*/
+  } else {$errors[] = 'You did not enter your email address.';}
 
 
   // Check for a message
-  /*if (empty($_REQUEST['comment'])) {
+  if (empty($_REQUEST['comment'])) {
   	$errors[] = 'You did not enter a question or comment.';
   	}else {
 	  	$comment = $_REQUEST['comment'];
 	  }
   
-  */
+  
   }
   //End of validation 
 
 
-/*if (isset($_REQUEST['submitted'])) {
+
+
+if (isset($_REQUEST['submitted'])) {
   if (empty($errors)) { 
   $from = "www.feedthecityky.com"; //Site name
   // Change this to your email address you want to form sent to
@@ -93,25 +50,8 @@ else {
 
   }
 }
-*/
-
-if (isset($_REQUEST['submitted'])) {
-  if (empty($errors)) { 
-    $stmt->execute();
-  }
-}
-
-
-
-//$stmt->close();
-//$conn->close();
 
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -119,10 +59,10 @@ if (isset($_REQUEST['submitted'])) {
 		<meta charset="utf-8">
 		<title>Feed the City</title>
    		<meta name="viewport" content="width=device-width, initial-scale=1.0">   		
-	  	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" type:"text/css">
-    	<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen" type:"text/css">
+	  	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
     	<link href='https://fonts.googleapis.com/css?family=Dancing+Script:700|Crimson+Text:700,400italic|PT+Serif:700,400italic' rel='stylesheet' type='text/css'>
-    	<link href="css/mystyle.css" rel="stylesheet" media="screen" type:"text/css">	
+    	<link href="css/mystyle.css" rel="stylesheet" media="screen">	
     	
 
 	</head> 
@@ -170,34 +110,27 @@ if (isset($_REQUEST['submitted'])) {
 		              <h3>Got a question or comment? Send us an email.</h3>
 		              <br>
 		              <form action="" method="post">
-		                <label>First Name: <br />
-		                <input name="firstname" type="text" /><br /></label>
+		                <label>Name: <br />
+		                <input name="name" type="text" /><br /></label>
 		                <br><br>
-
-                    <label>Last Name: <br />
-                    <input name="lastname" type="text" /><br /></label>
-                    <br><br>
 		                
 		                <label>Email: <br />
 		                <input name="email" type="text" /><br /></label>
 		                <br><br>
 
-		               <!--  <label>Questions or Comments: <br />
+		                <label>Questions or Comments: <br />
 		                  <textarea name="comment" rows="5" cols="40"></textarea>
 		               
-		                <br><br> -->
+		                <br><br>
 		                <br>
 		                  
 		                 </label>
 		                 <br>
 		                
-		            <input class="btn btn-default pull-left" name="" type="reset" value="Reset Form" /> 
-                    <input class="btn btn-default" name="submitted" type="submit" value="Submit" />
-                    
+		                <input class="btn btn-default pull-left" name="" type="reset" value="Reset Form" /> <input class="btn btn-default" name="submitted" type="submit" value="Submit" />
 		              </form>
 		              <br>
-                  <button class="btn btn-default"  type="button" href="display.php" id="list">Display List</button>
-                  
+
 		    
 		        </div>
 		        <div class="col-sm-6 hidden-xs pull-right">
@@ -234,42 +167,9 @@ if (isset($_REQUEST['submitted'])) {
 		  
 
 		  }
-
-
 		  }
 		   //End of errors array
-
-
-
-      ?>
-
-
-       <?php
-
-       //Printing List
-
-       if(isset($_REQUEST['display'])){
-      $sql = "SELECT * FROM patrons";
-      $result = $conn->query($sql);
-      "<br>";
-       echo "id"."  ". "First Name" . "  ". "Last Name". "<br>";
-
-
-      if($result->num_rows > 0){
-      //output data of each row
-      while ($row = $result->fetch_assoc()) {
-        echo "id:" . $row["id"]. " " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-      }
-
-      }else {
-      echo "0 results";
-        }
-      }
-
-
-      ?>
-
-
+		  ?>
    </div>
    		
 
@@ -299,11 +199,8 @@ if (isset($_REQUEST['submitted'])) {
     		
      	</div>  
     </footer>
-    
 	<script src="http://code.jquery.com/jquery.js"></script>
    	<script src="js/bootstrap.min.js"></script>
-    <script src="js/display.js" type="text/javascript"></script>
-   	
     	
 
 	</body>

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "3566";
-$dbname = "myDB";
+$dbname = "practice";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -51,19 +51,28 @@ else{
 }*/
 echo "<br>";
 
+$name = $_POST['name']; 
+$sql= "DELETE FROM patrons where firstname = '".$name."'"; 
 
-$sql = "SELECT * FROM MyGuest";
-$result = $conn->query($sql);
+if(isset($_REQUEST['Submit'])) {
+	$conn->query($sql);
+    echo "deleted";
+} 
+else{ echo "fail";} 
 
-if($result->num_rows > 0){
-	//output data of each row
-	while ($row = $result->fetch_assoc()) {
-		echo "id:" . $row["id"]. " " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-	}
-
-}else {
-	echo "0 results";
-}
-
-$conn->close();
+//$conn->close();
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pratice</title>
+</head>
+<body>
+	<form action="" method="post"> 
+	<label>Name: <br/>
+	<input name="name" type="text" /></label> 
+	<input name="Submit" type="submit" value="delete record" /> 
+	</form> 
+</body>
+</html>
