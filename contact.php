@@ -99,6 +99,7 @@ if (isset($_REQUEST['submitted'])) {
 			<li><a href="donate.html">DONATIONS</a></li>
     	    <li><a href="events.html">EVENTS</a></li>	
     	    <li><a href="contact.php" class="selected">CONTACT US</a></li>
+          <li><a href="display.php">DB</a></li>
     	  </ul>
         </nav>
   	  </header><!--  END NAV BAR -->

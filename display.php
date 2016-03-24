@@ -90,6 +90,7 @@ else{
   	  </header><!--  END NAV BAR -->
   		<div class="jumbotron">  
           <div class="container">
+          <h2><a href="add.php">Create/Delete Entry</a></h2>
           	<?php
           		$sql = "SELECT * FROM patrons";
  				$result = $conn->query($sql);
@@ -110,6 +111,8 @@ else{
 			    echo '<td>'.$row["firstname"].'</td>';
 			    echo '<td>'.$row["lastname"].'</td>';
 			    echo '<td>'.$row["email"].'</td>';
+
+	     			
 			    print '</tr>';
 			}
 			echo '</table>';  
