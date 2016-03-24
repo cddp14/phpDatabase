@@ -104,11 +104,11 @@ $ID = $_POST['id'];
 $sql= "DELETE FROM patrons WHERE id = ".$ID."";
 
 
-if(isset($_REQUEST['delete'])) {
+/*if(isset($_REQUEST['delete'])) {
 	$conn->query($sql);
     echo "deleted";
 } 
-else{ echo "fail";} 
+else{ echo "fail";} */
 	     			
 					  
 
@@ -219,15 +219,15 @@ else{ echo "fail";}
 		    
 		        </div>
 		        <div class="col-sm-6 hidden-xs pull-right">
-			       <h3>Delete Entry</h3>
+			       <h3>Delete Entry by ID</h3>
           			
-          			 <form action="" method="post">
+          			 <!-- <form action="" method="post">
                     <label>First Name <br />
                     <input name="d_firstname" type="text" /><br /></label>
                     <label>Last Name <br />
                     <input name="d_lastname" type="text" /><br /></label>
 
-                    <h3>OR</h3>
+                    <h3>OR</h3> -->
                     <br>
 		                <label>ID <br />
 		                <input name="id" type="text" /><br /></label>
